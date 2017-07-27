@@ -34,7 +34,7 @@ jobs:
 
       - run:
           name: Get dependencies
-          command: govendor sync -vv
+          command: govendor sync -v
 
       - save_cache:
           paths:
