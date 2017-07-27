@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/golang:1.8
       
@@ -33,12 +33,12 @@ jobs:
           name: Get dependencies
           command: govendor sync
 
-      - setup_remote_docker
-
-      - run:
-          name: Test docker access
-          command: docker ps
-
       - run:
           name: Run tests
           command: go test ./app/...
+
+workflows:
+  version: 2
+  test:
+    jobs:
+     - test
