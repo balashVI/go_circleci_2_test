@@ -29,17 +29,13 @@ jobs:
           name: Install GoVendor
           command: go get -u github.com/kardianos/govendor
 
-      - restore_cache:
-          key: m2-{{ checksum  "vendor/vendor.json" }}
+     
 
       - run:
           name: Get dependencies
-          command: govendor sync
+          command: govendor sync -v
 
-      - save_cache:
-          paths:
-              - vendor/
-          key: m2-{{ checksum  "vendor/vendor.json" }}
+      
 
       - run:
           name: Run tests
