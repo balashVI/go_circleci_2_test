@@ -9,6 +9,14 @@ jobs:
     steps:
       - checkout
 
+      - run: 
+          name: Install GoVendor
+          command: go get -u github.com/kardianos/govendor
+
+      - run:
+          name: Get dependencies
+          command: govendor sync
+
       - run:
           name: Run tests
           command: go test ./app/...
