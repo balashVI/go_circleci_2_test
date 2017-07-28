@@ -52,7 +52,7 @@ workflows:
   test:
     jobs:
       - test
-      - j1:
+      - build:
           requires:
             - test
           filters:
