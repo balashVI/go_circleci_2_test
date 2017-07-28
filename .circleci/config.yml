@@ -51,7 +51,7 @@ workflows:
   version: 2
   test:
     jobs:
-     - test
-     - j1:
+      - test
+      - j1:
         requires:
-            - j2
+          - j2
