@@ -49,12 +49,10 @@ jobs:
 
 workflows:
   version: 2
-  test:
+  test_build_deploy:
     jobs:
       - test
       - build:
-          requires:
-            - test
           filters:
             branches:
               only: master
