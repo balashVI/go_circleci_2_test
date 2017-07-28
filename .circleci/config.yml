@@ -3,7 +3,7 @@ jobs:
   test:
     docker:
       - image: circleci/golang:1.8
-      
+        
     working_directory: /go/src/github.com/balashVI/go_circleci_2_test
 
     steps:
@@ -52,7 +52,6 @@ workflows:
   test:
     jobs:
       - test
-      - j2
       - j1:
           requires:
             - j2
